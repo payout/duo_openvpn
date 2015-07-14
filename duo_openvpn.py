@@ -361,7 +361,7 @@ def auth(client, control, username, password, ipaddr):
 def main(Client=Client, environ=os.environ):
     control = environ.get('control')
     username = environ.get('username')
-    password = environ.get('password')
+    password = "push" # We want to force "push" for DUO 2-factor
     ipaddr = environ.get('ipaddr', '0.0.0.0')
 
     if not control or not username:
