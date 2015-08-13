@@ -53,6 +53,9 @@ auth_user_pass_verify(struct context *ctx, const char *args[], const char *envp[
 	
 	control = get_env("auth_control_file", envp);
 	username = get_env("common_name", envp);
+	if (username == NULL) {
+		username = get_env("username", envp);
+	}
 	password = get_env("password", envp);
 	ipaddr = get_env("untrusted_ip", envp);
 
